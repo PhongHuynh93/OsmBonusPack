@@ -10,7 +10,7 @@ import org.osmdroid.views.overlay.infowindow.BasicInfoWindow;
 /**
  * Created by huynhducthanhphong on 9/10/16.
  */
-public class NameOfStreetInfoWindow extends BasicInfoWindowPhong {
+public class NameOfStreetInfoWindow extends InfoWindow {
     protected NameOfStreetOverlay mMarkerRef;
 
     public NameOfStreetInfoWindow(int layoutResId, MapView mapView) {
