@@ -75,7 +75,13 @@ dependencies {
     compile 'com.google.dagger:dagger:2.6.1'
 
     // map
-//    compile 'com.github.MKergall:osmbonuspack:v5.8.1'
     compile 'org.osmdroid:osmdroid-android:5.4:release@aar'
+//    compile 'com.github.MKergall:osmbonuspack:v5.8.1'
+//    compile(name:'osmbonuspack_v5.8.1', ext:'aar')
+//    compile 'org.osmdroid:osmdroid-android:5.2@aar'
+    compile 'org.apache.commons:commons-lang3:3.3.2'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.squareup.okhttp:okhttp:2.6.0'
+    compile project(':osmbonuspack_v5.8.1')
 
 }
