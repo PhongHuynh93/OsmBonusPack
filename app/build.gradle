@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.jakewharton.hugo'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "dhbk.android.osmbonuspack"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    // butter knife library
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+// log
+// https://github.com/JakeWharton/timber
+
+// retrofit
+// https://github.com/square/retrofit
+// http://guides.codepath.com/android/Consuming-APIs-with-Retrofit
+// compile 'com.squareup.retrofit2:retrofit:2.1.0'
+// compile 'com.squareup.retrofit2:converter-gson:2.1.0'  
+// compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+// gson
+// compile 'com.google.code.gson:gson:2.7'
+
+// rxjava + rxandroid
+// compile 'io.reactivex:rxandroid:1.2.1'
+// compile 'io.reactivex:rxjava:1.1.6'
+
+// sqlbrite + dao
+// http://hannesdorfmann.com/android/sqlbrite-dao
+// compile 'com.hannesdorfmann.sqlbrite:dao:0.6.1' c
+// compile 'com.hannesdorfmann.sqlbrite:annotations:0.6.1'
+// apt 'com.hannesdorfmann.sqlbrite:object-mapper:0.6.1'
+
+// dagger 2
+    apt 'com.google.dagger:dagger-compiler:2.6.1'
+    provided 'javax.annotation:jsr250-api:1.0'
+
+// load image
+//compile 'com.squareup.picasso:picasso:2.5.2'
+//  compile 'com.github.bumptech.glide:glide:3.7.0'
+
+// check null
+//    https://github.com/google/guava
+
+// lombok
+    compile "org.projectlombok:lombok:1.16.10"
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.jakewharton.timber:timber:4.3.0'
+    compile 'com.google.dagger:dagger:2.6.1'
+
+    // map
+//    compile 'com.github.MKergall:osmbonuspack:v5.8.1'
+    compile 'org.osmdroid:osmdroid-android:5.4:release@aar'
+
+}
