@@ -1,4 +1,4 @@
-package dhbk.android.osmbonuspack;
+package dhbk.android.osmbonuspack.InfoWindow;
 
 import android.content.Context;
 import android.text.Html;
@@ -9,14 +9,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.OverlayWithIW;
-import org.osmdroid.views.overlay.infowindow.BasicInfoWindow;
-import org.osmdroid.views.overlay.infowindow.InfoWindow;
 
 /**
  * Created by huynhducthanhphong on 9/10/16.
  */
-public class BasicInfoWindowPhong extends InfoWindow {
+public class BasicInfoWindowPhong extends TestInfoWindow {
     public static final int UNDEFINED_RES_ID = 0;
     static int mTitleId = 0;
     static int mDescriptionId = 0;
@@ -53,7 +50,7 @@ public class BasicInfoWindowPhong extends InfoWindow {
     }
 
     public void onOpen(Object item) {
-        OverlayWithIW overlay = (OverlayWithIW) item;
+        TestOverlayWithIW overlay = (TestOverlayWithIW) item;
         String title = overlay.getTitle();
         if (title == null) {
             title = "";

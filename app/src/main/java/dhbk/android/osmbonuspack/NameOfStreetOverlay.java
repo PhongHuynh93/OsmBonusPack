@@ -18,6 +18,8 @@ import org.osmdroid.views.MapView;
 import org.osmdroid.views.Projection;
 import org.osmdroid.views.overlay.OverlayWithIW;
 
+import dhbk.android.osmbonuspack.InfoWindow.NameOfStreetInfoWindow;
+
 /**
  * Created by huynhducthanhphong on 9/10/16.
  */

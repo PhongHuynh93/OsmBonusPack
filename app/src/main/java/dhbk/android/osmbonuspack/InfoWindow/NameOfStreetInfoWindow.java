@@ -1,11 +1,12 @@
-package dhbk.android.osmbonuspack;
+package dhbk.android.osmbonuspack.InfoWindow;
 
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.Marker;
-import org.osmdroid.views.overlay.infowindow.BasicInfoWindow;
+
+import dhbk.android.osmbonuspack.InfoWindow.BasicInfoWindowPhong;
+import dhbk.android.osmbonuspack.NameOfStreetOverlay;
 
 /**
  * Created by huynhducthanhphong on 9/10/16.
