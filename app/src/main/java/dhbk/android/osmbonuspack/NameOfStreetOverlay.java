@@ -21,6 +21,7 @@ import org.osmdroid.views.overlay.OverlayWithIW;
 /**
  * Created by huynhducthanhphong on 9/10/16.
  */
+
 public class NameOfStreetOverlay extends OverlayWithIW {
     public static boolean ENABLE_TEXT_LABELS_WHEN_NO_IMAGE = false;
     protected int mTextLabelBackgroundColor;
@@ -28,6 +29,7 @@ public class NameOfStreetOverlay extends OverlayWithIW {
     protected int mTextLabelFontSize;
     protected Drawable mIcon;
     protected GeoPoint mPosition;
+    // FIXME: 9/10/16 the rotation of the marker, when we scroll the map, also scroll the info windows
     protected float mBearing;
     protected float mAnchorU;
     protected float mAnchorV;
@@ -37,8 +39,8 @@ public class NameOfStreetOverlay extends OverlayWithIW {
     protected boolean mDraggable;
     protected boolean mIsDragged;
     protected boolean mFlat;
-    protected NameOfStreetOverlay.OnMarkerClickListener mOnMarkerClickListener;
-    protected NameOfStreetOverlay.OnMarkerDragListener mOnMarkerDragListener;
+    protected OnMarkerClickListener mOnMarkerClickListener;
+    protected OnMarkerDragListener mOnMarkerDragListener;
     protected Drawable mImage;
     protected boolean mPanToView;
     protected Point mPositionPixels;
@@ -56,8 +58,10 @@ public class NameOfStreetOverlay extends OverlayWithIW {
     }
 
     public NameOfStreetOverlay(MapView mapView, Context resourceProxy) {
+        // FIXME: 9/10/16 change the color of the info windows
         this.mTextLabelBackgroundColor = -1;
-        this.mTextLabelForegroundColor = -16777216;
+        this.mTextLabelForegroundColor = -16777216; // it has an alpha color
+        // FIXME: 9/10/16 change the textsize
         this.mTextLabelFontSize = 24;
         this.resource = mapView.getContext().getResources();
         this.mBearing = 0.0F;
@@ -74,11 +78,13 @@ public class NameOfStreetOverlay extends OverlayWithIW {
         this.mFlat = false;
         this.mOnMarkerClickListener = null;
         this.mOnMarkerDragListener = null;
+
+        // FIXME: 9/10/16 default icon for marker when click, show an info windows
         if (mDefaultIcon == null) {
             mDefaultIcon = resourceProxy.getResources().getDrawable(org.osmdroid.library.R.drawable.marker_default);
         }
 
-//        fixme - change default info windows
+//        fixme - change default info windows layout
         this.mIcon = mDefaultIcon;
         if (mDefaultInfoWindow == null || mDefaultInfoWindow.getMapView() != mapView) {
             mDefaultInfoWindow = new NameOfStreetInfoWindow(org.osmdroid.library.R.layout.bonuspack_bubble, mapView);
@@ -171,11 +177,11 @@ public class NameOfStreetOverlay extends OverlayWithIW {
         mapView.getOverlays().remove(this);
     }
 
-    public void setOnMarkerClickListener(NameOfStreetOverlay.OnMarkerClickListener listener) {
+    public void setOnMarkerClickListener(OnMarkerClickListener listener) {
         this.mOnMarkerClickListener = listener;
     }
 
-    public void setOnMarkerDragListener(NameOfStreetOverlay.OnMarkerDragListener listener) {
+    public void setOnMarkerDragListener(OnMarkerDragListener listener) {
         this.mOnMarkerDragListener = listener;
     }
 
@@ -195,6 +201,7 @@ public class NameOfStreetOverlay extends OverlayWithIW {
         this.mPanToView = panToView;
     }
 
+    // FIXME: 9/10/16 show info windows
     public void showInfoWindow() {
         if (this.mInfoWindow != null) {
             boolean markerWidth = false;
@@ -203,6 +210,7 @@ public class NameOfStreetOverlay extends OverlayWithIW {
             int markerHeight1 = this.mIcon.getIntrinsicHeight();
             int offsetX = (int) (this.mIWAnchorU * (float) markerWidth1) - (int) (this.mAnchorU * (float) markerWidth1);
             int offsetY = (int) (this.mIWAnchorV * (float) markerHeight1) - (int) (this.mAnchorV * (float) markerHeight1);
+            // fixme open info windows at this position
             this.mInfoWindow.open(this, this.mPosition, offsetX, offsetY);
         }
     }
@@ -325,6 +333,7 @@ public class NameOfStreetOverlay extends OverlayWithIW {
         }
     }
 
+    // FIXME: 9/10/16 show windows when click the marker
     protected boolean onMarkerClickDefault(NameOfStreetOverlay marker, MapView mapView) {
         marker.showInfoWindow();
         if (marker.mPanToView) {

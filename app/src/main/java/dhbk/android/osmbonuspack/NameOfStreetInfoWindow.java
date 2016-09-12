@@ -9,8 +9,9 @@ import org.osmdroid.views.overlay.infowindow.BasicInfoWindow;
 
 /**
  * Created by huynhducthanhphong on 9/10/16.
+ * todo use this class to make only the info windows, not the marker
  */
-public class NameOfStreetInfoWindow extends InfoWindow {
+public class NameOfStreetInfoWindow extends BasicInfoWindowPhong {
     protected NameOfStreetOverlay mMarkerRef;
 
     public NameOfStreetInfoWindow(int layoutResId, MapView mapView) {

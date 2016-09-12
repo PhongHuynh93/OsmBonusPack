@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OsmBonusPack.iml" filepath="$PROJECT_DIR$/OsmBonusPack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OsmBonusPackWindowOverlay.iml" filepath="$PROJECT_DIR$/OsmBonusPackWindowOverlay.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/osmbonuspack_v5.8.1/osmbonuspack_v5.8.1.iml" filepath="$PROJECT_DIR$/osmbonuspack_v5.8.1/osmbonuspack_v5.8.1.iml" />
     </modules>
