@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         // make the instruction table
 //        startMarker.setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
-        startMarker.setTitle("Đường Lý Thường Kiệt");
-
+        // TODO: 9/13/16 change the title of name of street
+        startMarker.setTitle("Đường Lý Thường KiệtsssssssKiệtsssssss");
     }
 }

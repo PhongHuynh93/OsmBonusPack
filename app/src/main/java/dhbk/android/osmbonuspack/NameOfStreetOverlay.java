@@ -16,15 +16,17 @@ import android.view.MotionEvent;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.Projection;
-import org.osmdroid.views.overlay.OverlayWithIW;
 
 import dhbk.android.osmbonuspack.InfoWindow.NameOfStreetInfoWindow;
+import dhbk.android.osmbonuspack.InfoWindow.TestOverlayWithIW;
 
 /**
- * Created by huynhducthanhphong on 9/10/16.
+ * Created by huynhducthanhphong on 9/10/16
+ *
+ * this is a marker with info windows
  */
 
-public class NameOfStreetOverlay extends OverlayWithIW {
+public class NameOfStreetOverlay extends TestOverlayWithIW {
     public static boolean ENABLE_TEXT_LABELS_WHEN_NO_IMAGE = false;
     protected int mTextLabelBackgroundColor;
     protected int mTextLabelForegroundColor;
@@ -63,8 +65,9 @@ public class NameOfStreetOverlay extends OverlayWithIW {
         // FIXME: 9/10/16 change the color of the info windows
         this.mTextLabelBackgroundColor = -1;
         this.mTextLabelForegroundColor = -16777216; // it has an alpha color
-        // FIXME: 9/10/16 change the textsize
-        this.mTextLabelFontSize = 24;
+        // FIXME: 9/10/16 change the textsize in the info windows
+        this.mTextLabelFontSize = 15;
+//        this.mTextLabelFontSize = 24;
         this.resource = mapView.getContext().getResources();
         this.mBearing = 0.0F;
         this.mAlpha = 1.0F;
@@ -86,10 +89,11 @@ public class NameOfStreetOverlay extends OverlayWithIW {
             mDefaultIcon = resourceProxy.getResources().getDrawable(org.osmdroid.library.R.drawable.marker_default);
         }
 
-//        fixme - change default info windows layout
         this.mIcon = mDefaultIcon;
         if (mDefaultInfoWindow == null || mDefaultInfoWindow.getMapView() != mapView) {
-            mDefaultInfoWindow = new NameOfStreetInfoWindow(org.osmdroid.library.R.layout.bonuspack_bubble, mapView);
+            //        fixme - change default info windows layout
+//            mDefaultInfoWindow = new NameOfStreetInfoWindow(org.osmdroid.library.R.layout.bonuspack_bubble, mapView);
+            mDefaultInfoWindow = new NameOfStreetInfoWindow(R.layout.bonuspack_bubble, mapView);
         }
 
         this.setInfoWindow(mDefaultInfoWindow);
